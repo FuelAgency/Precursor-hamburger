@@ -6,5 +6,61 @@
 	"details": {
 	    "description": "This grid module gives you the ability to build a responsive site. It uses the default media query settings, found in 'Settings'. Define the settings for your site grid here. Some of these settings may not work, as they're deprecated since and older version of Precursor."
 	},
-	"fields": []
+	"fields": [
+        {
+            "name": "overlay-bg",
+            "value": "000000",
+            "meta": "hex"
+        },
+        {
+            "name": "sidebar-position",
+            "value": "right",
+            "meta": "string"
+        },
+        {
+            "name": "toggle-size",
+            "value": "3em",
+            "meta": "string"
+        },
+        {
+            "name": "toggle-gap",
+            "value": "0.2em",
+            "meta": "string"
+        },
+        {
+            "name": "sidebar-width",
+            "value": "240px",
+            "meta": "string"
+        },
+        {
+            "name": "overlay-transition-speed",
+            "value": "300ms",
+            "meta": "string"
+        },
+        {
+            "name": "overlay-opacity",
+            "value": "30%",
+            "meta": "string"
+        },
+        {
+            "name": "overlay-delay",
+            "value": "100ms",
+            "meta": "string"
+        },
+        {
+            "name": "sidebar-open-speed",
+            "value": "300ms",
+            "meta": "string"
+        },
+        {
+            "name": "sidebar-close-speed",
+            "value": "300ms",
+            "meta": "string"
+        },
+        {
+            "name": "sidebar-bg",
+            "value": "#e0e0e0",
+            "meta": "hex"
+        }
+    ]
 }
