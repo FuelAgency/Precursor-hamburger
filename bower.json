@@ -1,21 +1,19 @@
 {
-  "name": "precursor-reset",
-  "version": "1.0.1",
+  "name": "precursor-hamburger",
+  "version": "1.0.2",
   "ignore": [
     ".gitignore",
     ".gitattributes"
   ],
   "main": [
-    "reset.less",
-    "reset.css"
+    "hamburger.less",
+    "hamburger.css"
   ],
   "keywords": [
     "precursor",
-    "reset",
-    "normalise",
-    "normalize",
-    "fuel"
+    "mobile navigation",
+    "hamburger"
   ],
-  "is_editable": true,
-  "linked_file": "reset.less"
+  "is_editable": false,
+  "linked_file": "hamburger.less" 
 }
