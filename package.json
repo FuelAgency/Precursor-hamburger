@@ -1,14 +1,10 @@
 {
-  	"id": "reset",
-	"name": "Reset",
-	"expandable": false,
-	"is_setting": true,
-	"is_hidden": false,
-	"priority": 5,
-	"version": "1.0",
-	"is_custom": false,
+  	"id": "hamburger",
+	"name": "Hamburger",
+    "is_custom": false,
+    "is_editable": true,
 	"details": {
-	    "description": "Reset (CSS Normalise) makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing."
+	    "description": "This grid module gives you the ability to build a responsive site. It uses the default media query settings, found in 'Settings'. Define the settings for your site grid here. Some of these settings may not work, as they're deprecated since and older version of Precursor."
 	},
 	"fields": []
 }
