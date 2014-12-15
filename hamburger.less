@@ -1,0 +1,204 @@
+//  Global settings
+	@import "../../mixins/includes";
+
+//  ==========================================================================
+//	MODULE STYLES
+//  ==========================================================================
+		
+
+
+//  ==========================================================================
+//	MODULE SETTINGS
+//  ==========================================================================	
+	
+	//	Side bar defaults
+	.sidebar{
+		position:fixed;
+		top:0;
+		height:100%;
+		width:@sidebar-width;
+		background:white;
+		z-index:101;
+		.EasingQuart(@sidebar-close-speed);
+		.hidden();
+
+		.sidebar-toggle{
+			line-height:@toggle-size;
+			height:@toggle-size;
+			width:@toggle-size;
+			text-align:center;
+			display:block;
+			position:absolute;
+			top:0;
+			.unselectable();
+			.removeTapColor();
+
+			.sidebar-toggle-img{
+				font-size:150%;
+				width:100%;
+				height:100%;
+				display:block;
+				position:absolute;
+
+				&:before{
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin-left:-0.5em;
+					margin-top:-0.35em;
+					width: 1em;
+					height: 0.125em;
+					border-top: 0.375em double #000;
+					border-bottom: 0.125em solid #000;
+				}
+			}
+		}
+	}
+
+	.get(@pos) when (@pos = right){
+		html{
+			&.sidebar-visible{
+				.sidebar{
+					.translateX(-@sidebar-width);
+					.EasingQuart(@sidebar-open-speed);
+				}
+			}
+		}
+		.sidebar{
+			right:-@sidebar-width;
+
+			.sidebar-toggle{
+				left:-@toggle-size;
+				margin-left:-@toggle-gap;
+			}
+		}
+	}
+	.get(@pos) when (@pos = left){
+		html{
+			&.sidebar-visible{
+				.sidebar{
+					.translateX(@sidebar-width);
+					.EasingQuart(@sidebar-open-speed);
+				}
+			}
+		}
+		.sidebar{
+			left:-@sidebar-width;
+
+			.sidebar-toggle{
+				right:-@toggle-size;
+				margin-right:-@toggle-gap;
+			}
+		}
+	}
+	.get(@sidebar-position);
+
+
+	//	Sidebar overlay
+	.sidebar-overlay{
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index:100;
+		background:fade(@overlay-bg, @overlay-opacity);
+		.transition(@overlay-transition-speed);
+		.delay(@overlay-delay);
+		.hidden();
+	}
+
+	//	Show the overlay
+	html{
+		&.sidebar-visible{
+			.sidebar-overlay{
+				.visible();
+			}
+		}
+	}
+
+	.EasingBezier(@speed){
+		-webkit-transition: all @speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-moz-transition: all @speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-ms-transition: all @speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-o-transition: all @speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		transition: all @speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+	.EasingQuart(@speed){
+		-webkit-transition: all @speed cubic-bezier(0.165, 0.84, 0.44, 1);
+		-moz-transition: all @speed cubic-bezier(0.165, 0.84, 0.44, 1);
+		-ms-transition: all @speed cubic-bezier(0.165, 0.84, 0.44, 1);
+		-o-transition: all @speed cubic-bezier(0.165, 0.84, 0.44, 1);
+		transition: all @speed cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+
+//  ==========================================================================
+//	MODULE RESPONSIVE STYLES
+//  ==========================================================================
+	
+//	Mobile only styles 
+	.mobile-landscape(){
+
+	}
+	.mobile-portrait(){
+
+	}
+	.mobile-all(){
+		.sidebar{
+			.visible();
+		}
+	}
+
+//	Tablet only styles 
+	.tablet-landscape(){
+  
+	}
+	.tablet-portrait(){
+
+	}
+	.tablet-all(){
+		
+	}
+
+//	Desktop only styles
+	.desktop(){
+
+	}
+
+//  ==========================================================================
+//	DON'T EDIT BELOW
+//  ==========================================================================
+	.modResMobile(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.mobile-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.mobile-portrait();
+		}
+		.getOrientation(@orientation);	
+		.mobile-all();
+	}
+	.modResTablet(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.tablet-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.tablet-portrait();
+		}
+		.getOrientation(@orientation);	
+		.tablet-all();
+	}
+	.modResDesktop(){
+		.desktop();
+	}
+
+	@media @SmartphonesPortraitAndLandscape {.modResMobile(portraitandlandscape);}
+	@media @SmartphonesLandscape            {.modResMobile(landscape);}
+	@media @SmartphonesPortrait             {.modResMobile(portrait);}
+	@media @iPadPortraitAndLandscape        {.modResTablet(portraitandlandscape);}
+	@media @iPadLandscape                   {.modResTablet(landscape);}
+	@media @iPadPortrait                    {.modResTablet(portrait);}
+	@media @DesktopAndLaptop                {.modResDesktop();}
+//  ==========================================================================

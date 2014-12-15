@@ -1,0 +1,21 @@
+{
+  "name": "precursor-reset",
+  "version": "1.0.1",
+  "ignore": [
+    ".gitignore",
+    ".gitattributes"
+  ],
+  "main": [
+    "reset.less",
+    "reset.css"
+  ],
+  "keywords": [
+    "precursor",
+    "reset",
+    "normalise",
+    "normalize",
+    "fuel"
+  ],
+  "is_editable": true,
+  "linked_file": "reset.less"
+}

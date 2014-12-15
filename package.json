@@ -1,0 +1,14 @@
+{
+  	"id": "reset",
+	"name": "Reset",
+	"expandable": false,
+	"is_setting": true,
+	"is_hidden": false,
+	"priority": 5,
+	"version": "1.0",
+	"is_custom": false,
+	"details": {
+	    "description": "Reset (CSS Normalise) makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing."
+	},
+	"fields": []
+}
